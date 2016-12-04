@@ -1,0 +1,11 @@
+plex:
+  restart: always
+  build: .
+  container_name: plex
+  volumes:
+    - "/home/media:/data:ro"
+    - "/home/media/plex:/var/lib/plexmediaserver/Library/Application Support"
+  environment:
+    - "HOME=/data"
+  working_dir: /data
+  net: host

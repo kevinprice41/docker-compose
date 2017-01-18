@@ -1,0 +1,6 @@
+nginx:
+  restart: always
+  build: .
+  container_name: nginx
+  ports:
+    - 80:80

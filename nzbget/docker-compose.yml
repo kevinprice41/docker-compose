@@ -1,0 +1,13 @@
+plex:
+  restart: always
+  image: linuxserver/nzbget
+  container_name: nzbget
+  volumes:
+    - "/home/nzbget/config:/config"
+    - "/home/nzbget/downloads:/downloads"
+  environment:
+    - "PUID=0"
+    - "PGID=0"
+    - "TZ=EST"
+  ports:
+    - 6789:6789  

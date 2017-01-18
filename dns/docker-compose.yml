@@ -2,7 +2,7 @@ dnsmasq:
   restart: always
   build: dnsmasq
   container_name: dns
-  command: "-S /prizyp/172.17.0.1#8600"
+  command: "-S /service.prizyp/172.17.0.1#8600 -S 8.8.8.8 -S 10.0.1.1"
   ports:
   - "53:53:53/udp"
   cap_add:

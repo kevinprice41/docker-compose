@@ -5,8 +5,10 @@ plex:
   volumes:
     - "/home/couchpotato/config:/config"
     - "/home/media/Movies:/movies"
-    - "/home/couchpotato/downloads:/downloads"
+    - "/home/nzbget/downloads/completed/Movies:/downloads"
   environment:
     - "TZ=EST"
+    - "PGID=0"
+    - "PUID=0"
   ports:
     - 5050:5050  

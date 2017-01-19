@@ -5,7 +5,7 @@ plex:
   volumes:
     - "/dev/rtc:/dev/rtc:ro"
     - "/home/sonarr/config:/config"
-    - "/home/sonarr/tv:/tv"
+    - "/home/media/TV:/tv"
     - "/home/nzbget/downloads:/downloads"
   environment:
     - "PUID=0"

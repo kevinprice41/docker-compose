@@ -1,0 +1,12 @@
+plex:
+  restart: always
+  image: linuxserver/couchpotato
+  container_name: couchpotato
+  volumes:
+    - "/home/couchpotato/config:/config"
+    - "/home/media/Movies:/movies"
+    - "/home/couchpotato/downloads:/downloads"
+  environment:
+    - "TZ=EST"
+  ports:
+    - 5050:5050  

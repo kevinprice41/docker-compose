@@ -2,7 +2,7 @@ dnsmasq:
   restart: always
   build: dnsmasq
   container_name: dns
-  command: "-S /service.prizyp/172.17.0.1#8600 -S 8.8.8.8 -S 10.0.1.1"
+  command: "-S /service.prizyp/172.17.0.1#8600 -S 8.8.8.8 -S 192.168.1.254 -A /plex.prizyp.com/192.168.1.41 -A /jenkins.prizyp.com/192.168.1.41 -A /sonarr.prizyp.com/192.168.1.41 -A /nzbget.prizyp.com/192.168.1.41 -A /cp.prizyp.com/192.168.1.41"
   ports:
   - "53:53:53/udp"
   cap_add:
@@ -12,7 +12,7 @@ dnsmasq:
 
 consul:
   restart: always
-  command: "-domain prizyp -bootstrap -advertise 10.0.1.40 -client 0.0.0.0"
+  command: "-domain prizyp -bootstrap -advertise 192.168.1.41 -client 0.0.0.0"
   image: gliderlabs/consul-server
   ports:
   - "8400:8400"

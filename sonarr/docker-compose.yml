@@ -1,4 +1,4 @@
-plex:
+sonarr:
   restart: always
   image: linuxserver/sonarr
   container_name: sonarr

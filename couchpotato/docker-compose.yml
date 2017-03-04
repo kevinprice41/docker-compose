@@ -1,4 +1,4 @@
-plex:
+couchpotato:
   restart: always
   image: linuxserver/couchpotato
   container_name: couchpotato

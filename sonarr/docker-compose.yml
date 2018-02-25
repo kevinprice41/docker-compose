@@ -4,9 +4,9 @@ sonarr:
   container_name: sonarr
   volumes:
     - "/dev/rtc:/dev/rtc:ro"
-    - "/home/sonarr/config:/config"
-    - "/home/media/TV:/tv"
-    - "/home/nzbget/downloads:/downloads"
+    - "/price/media/sonarr/config:/config"
+    - "/price/media/tv:/tv"
+    - "/price/media/downloads:/downloads"
   environment:
     - "PUID=0"
     - "PGID=0"

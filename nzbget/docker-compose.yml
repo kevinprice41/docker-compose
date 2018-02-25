@@ -3,8 +3,8 @@ nzbget:
   image: linuxserver/nzbget
   container_name: nzbget
   volumes:
-    - "/home/nzbget/config:/config"
-    - "/home/nzbget/downloads:/downloads"
+    - "/price/media/nzbget/config:/config"
+    - "/price/media/downloads:/downloads"
   environment:
     - "PUID=0"
     - "PGID=0"

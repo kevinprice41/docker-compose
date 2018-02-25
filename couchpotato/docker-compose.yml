@@ -3,9 +3,9 @@ couchpotato:
   image: linuxserver/couchpotato
   container_name: couchpotato
   volumes:
-    - "/home/couchpotato/config:/config"
-    - "/home/media/Movies:/movies"
-    - "/home/nzbget/downloads/completed/Movies:/downloads"
+    - "/price/media/couchpotato/config:/config"
+    - "/price/media/movies:/movies"
+    - "/price/media/downloads:/downloads"
   environment:
     - "TZ=EST"
     - "PGID=0"

@@ -1,29 +1,11 @@
 dnsmasq:
   restart: always
   build: dnsmasq
-  container_name: dns
-  command: "-S /service.prizyp/172.17.0.1#8600 -S 8.8.8.8 -S 192.168.1.254 -A /plex.prizyp.com/192.168.1.41 -A /jenkins.prizyp.com/192.168.1.41 -A /sonarr.prizyp.com/192.168.1.41 -A /nzbget.prizyp.com/192.168.1.41 -A /cp.prizyp.com/192.168.1.41"
+  container_name: dnsmasq
   ports:
   - "53:53:53/udp"
+  volumes:
+    - "/dnsmasq/:/dnsmasq/"
   cap_add:
   - NET_ADMIN
-  links:
-  - consul
-
-consul:
-  restart: always
-  command: "-domain prizyp -bootstrap -advertise 192.168.1.41 -client 0.0.0.0"
-  image: gliderlabs/consul-server
-  ports:
-  - "8400:8400"
-  - "8500:8500"
-  - "172.17.0.1:8600:8600/udp"
-
-registrator:
-  restart: always
-  command: consul://consul:8500
-  image: gliderlabs/registrator:latest
-  links:
-  - consul
-  volumes:
-  - "/var/run/docker.sock:/tmp/docker.sock"
+  net: host
